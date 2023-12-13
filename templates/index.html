@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ninja Gold Game</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Your Gold: {{ gold }}</h1>
+
+        <form action="/process_money" method="POST">
+            <input type="hidden" name="place" value="farm">
+            <button class="btn btn-success" type="submit">Farm</button>
+        </form>
+
+        <form action="/process_money" method="POST">
+            <input type="hidden" name="place" value="cave">
+            <button class="btn btn-success" type="submit">Cave</button>
+        </form>
+
+        <form action="/process_money" method="POST">
+            <input type="hidden" name="place" value="house">
+            <button class="btn btn-success" type="submit">House</button>
+        </form>
+
+        <form action="/process_money" method="POST">
+            <input type="hidden" name="place" value="casino">
+            <button class="btn btn-success" type="submit">Casino</button>
+        </form>
+
+        <div class="mt-3">
+            <h3>Activities:</h3>
+            {% for activity in activities %}
+                <p>{{ activity }}</p>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
